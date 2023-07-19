@@ -75,3 +75,10 @@ precmd() {
   title "zsh" "%m" "%55<...<%~"
   set_prompt
 }
+
+# iTerm list working directory in title
+if [ $ITERM_SESSION_ID ]; then
+precmd() {
+  echo -ne "\033]0;${PWD##*/}\007"
+}
+fi
