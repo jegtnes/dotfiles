@@ -13,6 +13,9 @@
         wtf     = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
+        ignore = update-index --assume-unchanged
+        unignore = update-index --no-assume-unchanged
+        ignored = !git ls-files -v | grep "^[[:lower:]]"
 [color]
         diff = auto
         status = auto
@@ -21,6 +24,8 @@
 [core]
         excludesfile = ~/.gitignore
         editor = vim
+	autocrlf = input
+	eol = lf
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -45,3 +50,5 @@
 [user]
 	name = Alex Jegtnes
 	email = alex@jegtnes.com
+[pull]
+	rebase = true
