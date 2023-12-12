@@ -36,9 +36,6 @@ alias gca='git commit -a'
 alias gcam='git commit -am'
 alias gci='git commit'
 
-# Remove `+` and `-` from start of diff lines; just rely upon color.
-alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
-
 alias gdi='git diff'
 
 alias ge='git-edit-new'
