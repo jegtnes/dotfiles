@@ -37,3 +37,5 @@ bindkey '^[[5D' beginning-of-line
 bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^?' backward-delete-char
+
+export STARSHIP_CONFIG="/Users/jegtnes/.dotfiles/system/starship.toml"
