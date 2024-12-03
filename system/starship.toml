@@ -27,7 +27,7 @@ threshold = 10
 style = 'bold fg:#ffffff bg:#06969A'
 
 [[battery.display]]
-threshold = 98
+threshold = 95
 style = 'fg:#ffffff bg:#06969A'
 
 [cmd_duration]
@@ -46,11 +46,11 @@ truncation_symbol = "…/"
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-"Sites" = "󰖟 "
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = ""
+"Pictures" = ""
+"Sites" = "󰖟"
 # Keep in mind that the order matters. For example:
 # "Important Documents" = " 󰈙 "
 # will not be replaced, because "Documents" was already substituted before.
