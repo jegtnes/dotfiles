@@ -1,0 +1,35 @@
+#!/bin/zsh
+
+force_kill=false
+
+if [ "$1" = "-f" ]; then
+	force_kill=true
+	shift
+fi
+
+if [ -z "$1" ]; then
+	echo "Usage: $0 [-f] <port|process_name>"
+	exit 1
+fi
+
+target=$1
+
+# Check if target is a number (port)
+if [[ $target =~ ^[0-9]+$ ]]; then
+	pids=$(lsof -ti :$target)
+else
+	# Otherwise, treat it as a process name
+	pids=$(pgrep -f $target)
+fi
+
+if [ -z "$pids" ]; then
+	echo "No processes found for $target"
+else
+	if $force_kill; then
+		echo $pids | xargs kill -9
+		echo "Forcefully killed processes: $pids"
+	else
+		echo $pids | xargs kill -15
+		echo "Killed processes: $pids"
+	fi
+fi
