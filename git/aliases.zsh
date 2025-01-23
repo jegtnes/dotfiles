@@ -14,6 +14,8 @@ alias gap='git add -p'
 alias gam='git commit --amend -m'
 alias gama='git commit --amend -am'
 alias gaa='git commit --amend -a'
+alias game='git commit --amend'
+alias gamen='git commit --amend --no-edit'
 
 alias gb='git branch'
 alias gba='git branch -a'
